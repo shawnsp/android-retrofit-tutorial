@@ -8,4 +8,8 @@ import retrofit2.http.Query;
 public interface MovieApiService {
     @GET("movie/{id}")
     Call<Movie> getMovie(@Path("id") int id, @Query("api_key") String apiKey);
+
+    @GET("movie/{query}")
+    Call<TopRatedResponse> getTop20Movies(@Path("query") String query, @Query("api_key") String apiKey);
 }
+
